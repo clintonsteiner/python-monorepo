@@ -19,16 +19,20 @@ def get_github_username() -> str:
         return result.stdout.strip()
 
     raise RuntimeError(
-        "Could not get GitHub username from git config. "
-        "Run: git config user.name 'your-username'"
+        "Could not get GitHub username from git config. Run: git config user.name 'your-username'"
     )
 
 
 class ArchiveForks:
     """Archive forked repositories on GitHub."""
 
-    def __init__(self, username: str, token: str, work_dir: str = "./forked_repos",
-                 archive_dir: str = "./archived_repos"):
+    def __init__(
+        self,
+        username: str,
+        token: str,
+        work_dir: str = "./forked_repos",
+        archive_dir: str = "./archived_repos",
+    ):
         self.username = username
         self.token = token
         self.work_dir = Path(work_dir)
@@ -47,10 +51,7 @@ class ArchiveForks:
         page = 1
 
         while True:
-            url = (
-                f"https://api.github.com/users/{self.username}/repos?"
-                f"per_page=100&page={page}"
-            )
+            url = f"https://api.github.com/users/{self.username}/repos?per_page=100&page={page}"
             response = self.session.get(url, timeout=10)
             response.raise_for_status()
 

@@ -38,7 +38,7 @@ def create_package(package_name: str, description: str | None = None) -> None:
         [project]
         name = "{package_name}"
         version = "0.1.0"
-        description = "{description or 'A package in the monorepo'}"
+        description = "{description or "A package in the monorepo"}"
         readme = "README.md"
         requires-python = ">=3.11"
         authors = [{{name = "Developer", email = "dev@example.com"}}]
@@ -60,10 +60,12 @@ def create_package(package_name: str, description: str | None = None) -> None:
         ''')
 
     (package_path / "pyproject.toml").write_text(pyproject_content)
-    print(f"  ✓ Created pyproject.toml")
+    print("  ✓ Created pyproject.toml")
 
     # Create __init__.py
-    (src_path / "__init__.py").write_text('"""Package initialization."""\n\n__version__ = "0.1.0"\n')
+    (src_path / "__init__.py").write_text(
+        '"""Package initialization."""\n\n__version__ = "0.1.0"\n'
+    )
     print(f"  ✓ Created {package_dir_name}/__init__.py")
 
     # Create test file
@@ -77,13 +79,13 @@ def create_package(package_name: str, description: str | None = None) -> None:
             assert True
         ''')
     test_file.write_text(test_content)
-    print(f"  ✓ Created test_example.py")
+    print("  ✓ Created test_example.py")
 
     # Create README
-    readme_content = dedent(f'''\
+    readme_content = dedent(f"""\
         # {package_name}
 
-        {description or 'A package in the monorepo'}
+        {description or "A package in the monorepo"}
 
         ## Installation
 
@@ -97,9 +99,9 @@ def create_package(package_name: str, description: str | None = None) -> None:
         uv sync
         pytest
         ```
-        ''')
+        """)
     (package_path / "README.md").write_text(readme_content)
-    print(f"  ✓ Created README.md")
+    print("  ✓ Created README.md")
 
     # Update root pyproject.toml
     root_pyproject = root / "pyproject.toml"
@@ -108,27 +110,27 @@ def create_package(package_name: str, description: str | None = None) -> None:
     # Check if workspace entry already exists
     if f'{{ path = "packages/{package_name}" }}' not in content:
         # Find the workspace section and add the new package
-        lines = content.split('\n')
+        lines = content.split("\n")
         for i, line in enumerate(lines):
-            if 'workspace = [' in line:
+            if "workspace = [" in line:
                 # Find the closing bracket
                 for j in range(i + 1, len(lines)):
-                    if lines[j].strip() == ']':
+                    if lines[j].strip() == "]":
                         # Insert new package entry before closing bracket
                         lines.insert(j, f'    {{ path = "packages/{package_name}" }},')
                         break
                 break
 
-        root_pyproject.write_text('\n'.join(lines))
-        print(f"  ✓ Updated root pyproject.toml")
+        root_pyproject.write_text("\n".join(lines))
+        print("  ✓ Updated root pyproject.toml")
 
     print(f"\n✅ Package '{package_name}' created successfully!\n")
     print(f"Location: {package_path}")
-    print(f"Next steps:")
-    print(f"  1. Run: uv sync")
+    print("Next steps:")
+    print("  1. Run: uv sync")
     print(f"  2. Edit {package_path}/README.md")
     print(f"  3. Add your code to src/{package_dir_name}/")
-    print(f"  4. Add tests to tests/")
+    print("  4. Add tests to tests/")
 
 
 def main():
@@ -143,7 +145,8 @@ def main():
     )
     parser.add_argument("package_name", help="Name of the new package (e.g., 'my-new-package')")
     parser.add_argument(
-        "-d", "--description",
+        "-d",
+        "--description",
         help="Description of the package",
         default=None,
     )

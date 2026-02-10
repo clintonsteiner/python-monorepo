@@ -23,7 +23,6 @@ def get_token() -> str:
 @click.group()
 def cli():
     """Archive and manage GitHub forked repositories."""
-    pass
 
 
 @cli.command()
@@ -36,7 +35,7 @@ def fetch(work_dir, archive_dir, flat_file):
         token = get_token()
         username = get_github_username()
     except Exception as e:
-        raise click.ClickException(str(e))
+        raise click.ClickException(str(e)) from e
 
     click.echo(f"GitHub user: {username}")
 
@@ -72,7 +71,7 @@ def process(work_dir, archive_dir, flat_file):
         token = get_token()
         username = get_github_username()
     except Exception as e:
-        raise click.ClickException(str(e))
+        raise click.ClickException(str(e)) from e
 
     manager = ArchiveForks(username, token, work_dir, archive_dir)
     manager.setup_directories()
@@ -80,7 +79,7 @@ def process(work_dir, archive_dir, flat_file):
     try:
         repos = manager.load_selected_repos(flat_file)
     except FileNotFoundError:
-        raise click.ClickException(f"{flat_file} not found. Run 'fetch' first.")
+        raise click.ClickException(f"{flat_file} not found. Run 'fetch' first.") from None
 
     if not repos:
         raise click.ClickException("No repos to process")
@@ -115,14 +114,14 @@ def delete(flat_file, force):
         token = get_token()
         username = get_github_username()
     except Exception as e:
-        raise click.ClickException(str(e))
+        raise click.ClickException(str(e)) from e
 
     manager = ArchiveForks(username, token)
 
     try:
         repos = manager.load_repos(flat_file)
     except FileNotFoundError:
-        raise click.ClickException(f"{flat_file} not found")
+        raise click.ClickException(f"{flat_file} not found") from None
 
     if not repos:
         raise click.ClickException("No repos to delete")

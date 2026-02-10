@@ -5,9 +5,8 @@ import tempfile
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
-from click.testing import CliRunner
-
 from archive_git_forks.main import cli
+from click.testing import CliRunner
 
 
 class TestFetchCommand:

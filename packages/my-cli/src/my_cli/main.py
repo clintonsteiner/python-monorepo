@@ -1,13 +1,13 @@
 """CLI interface for the monorepo application."""
 
 import click
+
 from my_library import add, multiply
 
 
 @click.group()
 def cli():
     """A CLI tool for mathematical operations."""
-    pass
 
 
 @cli.command()
@@ -25,7 +25,7 @@ def add_numbers(a, b):
 def multiply_numbers(a, b):
     """Multiply two numbers together."""
     result = multiply(a, b)
-    click.echo(f"{a} × {b} = {result}")
+    click.echo(f"{a} x {b} = {result}")
 
 
 @cli.command()

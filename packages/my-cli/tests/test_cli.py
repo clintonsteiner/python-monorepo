@@ -22,7 +22,7 @@ class TestCLI:
         """Test the multiply command."""
         result = self.runner.invoke(cli, ["multiply-numbers", "4", "7"])
         assert result.exit_code == 0
-        assert "4 × 7 = 28" in result.output
+        assert "4 x 7 = 28" in result.output
 
     def test_sum_all_command(self):
         """Test the sum-all command."""

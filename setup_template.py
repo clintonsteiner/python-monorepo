@@ -4,18 +4,13 @@ Template setup script for Python monorepo.
 Helps customize the template for a new project.
 """
 
-import os
-import re
 import shutil
 from pathlib import Path
 
 
 def get_input(prompt: str, default: str = "") -> str:
     """Get user input with optional default."""
-    if default:
-        display_prompt = f"{prompt} [{default}]: "
-    else:
-        display_prompt = f"{prompt}: "
+    display_prompt = f"{prompt} [{default}]: " if default else f"{prompt}: "
 
     value = input(display_prompt).strip()
     return value if value else default
@@ -161,10 +156,7 @@ def should_skip_file(file_path: Path) -> bool:
             return True
 
     # Skip binary and large files
-    if file_path.suffix in {".png", ".jpg", ".jpeg", ".gif", ".pdf", ".bin", ".so"}:
-        return True
-
-    return False
+    return file_path.suffix in {".png", ".jpg", ".jpeg", ".gif", ".pdf", ".bin", ".so"}
 
 
 if __name__ == "__main__":

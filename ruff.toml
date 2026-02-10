@@ -1,5 +1,17 @@
 # Ruff configuration for Python monorepo
 
+line-length = 100
+indent-width = 4
+target-version = "py311"
+
+exclude = [
+    "\\.venv",
+    "__pycache__",
+    "build",
+    "dist",
+    "\\.egg-info",
+]
+
 [lint]
 select = [
     "E",      # pycodestyle errors
@@ -19,25 +31,7 @@ ignore = [
     "N806",   # Variable in function should be lowercase
 ]
 
-line-length = 100
-target-version = "py311"
-
 [lint.isort]
 known-first-party = ["my_library", "my_app", "my_cli"]
 known-local-folder = []
 force-single-line = false
-
-[format]
-indent-size = 4
-line-length = 100
-quote-style = "double"
-skip-magic-trailing-comma = false
-
-[exclude]
-patterns = [
-    "\\.venv",
-    "__pycache__",
-    "build",
-    "dist",
-    "\\.egg-info",
-]
