@@ -30,3 +30,7 @@ htmlcov/
 *.swo
 *~
 .DS_Store
+
+# Documentation
+docs/build/
+docs/source/_build/
