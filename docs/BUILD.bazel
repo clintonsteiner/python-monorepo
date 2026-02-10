@@ -1,0 +1,73 @@
+"""Documentation build rules for Hildie."""
+
+load("@rules_python//python:defs.bzl", "py_binary")
+
+# Sphinx builder wrapper
+py_binary(
+    name = "sphinx_build",
+    srcs = ["sphinx_build.py"],
+    main = "sphinx_build.py",
+    deps = [
+        "@pip_docs//alabaster",
+        "@pip_docs//babel",
+        "@pip_docs//docutils",
+        "@pip_docs//imagesize",
+        "@pip_docs//jinja2",
+        "@pip_docs//markupsafe",
+        "@pip_docs//pygments",
+        "@pip_docs//snowballstemmer",
+        "@pip_docs//sphinx",
+        "@pip_docs//sphinxcontrib_applehelp",
+        "@pip_docs//sphinxcontrib_devhelp",
+        "@pip_docs//sphinxcontrib_htmlhelp",
+        "@pip_docs//sphinxcontrib_jsmath",
+        "@pip_docs//sphinxcontrib_qthelp",
+        "@pip_docs//sphinxcontrib_serializinghtml",
+    ],
+)
+
+# Documentation build rule
+genrule(
+    name = "docs",
+    srcs = glob([
+        "source/**/*.rst",
+        "source/**/*.py",
+        "source/**/*.jpeg",
+        "source/_static/**/*",
+    ]) + [
+        "source/.nojekyll",
+        "//:hildie",
+    ],
+    outs = ["build/html/index.html"],
+    cmd = """
+        # Set up directories
+        BUILDDIR=$$(dirname $@)
+        SRCDIR=$$BUILDDIR/../source
+        mkdir -p $$SRCDIR/_static
+
+        # Copy source files maintaining structure
+        for src in $(SRCS); do
+            if [[ $$src == */source/* ]]; then
+                rel=$${src#*docs/source/}
+                target=$$SRCDIR/$$rel
+                mkdir -p $$(dirname $$target)
+                cp $$src $$target
+            fi
+        done
+
+        # Build docs with PYTHONPATH including the project root
+        PYTHONPATH=$$(pwd) $(location :sphinx_build) \
+            -b html \
+            $$SRCDIR \
+            $$BUILDDIR
+    """,
+    tools = [":sphinx_build"],
+    visibility = ["//visibility:public"],
+)
+
+# Alias for convenience
+alias(
+    name = "html",
+    actual = ":docs",
+    visibility = ["//visibility:public"],
+)

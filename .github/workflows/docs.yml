@@ -6,6 +6,8 @@ on:
       - master
     paths:
       - 'docs/**'
+      - 'src/hildie/**'
+      - 'MODULE.bazel'
       - '.github/workflows/docs.yml'
   workflow_dispatch:
 
@@ -28,22 +30,23 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v6
         with:
-          python-version: '3.11'
-          cache: 'pip'
+          python-version: '3.12'
 
-      - name: Install dependencies
-        run: |
-          pip install sphinx sphinx-rtd-theme
+      - name: Setup Bazel
+        uses: bazel-contrib/setup-bazel@0.9.0
+        with:
+          bazelisk-cache: true
+          disk-cache: ${{ github.workflow }}
+          repository-cache: true
 
-      - name: Build documentation
+      - name: Build documentation with Bazel
         run: |
-          cd docs
-          make html
+          bazel build //docs:html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: docs/build/html
+          path: bazel-bin/docs/build/html
 
   deploy:
     environment:

@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/clintonsteiner/python-monorepo/master/hildie.jpeg" alt="Hildie" width="400">
-</p>
-
 <h1 align="center">Hildie</h1>
 
 <p align="center">
@@ -195,5 +191,8 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 ---
 
 <p align="center">
-  <em>Made with love by Clinton, inspired by Hildie</em>
+  <em>Made by Clinton, inspired by Hildie</em>
+</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/clintonsteiner/python-monorepo/refs/heads/master/hildie.jpeg" alt="Hildie the Dog" width="400"/>
 </p>
