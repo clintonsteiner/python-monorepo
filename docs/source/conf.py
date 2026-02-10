@@ -26,11 +26,11 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 html_theme = "alabaster"  # Built-in theme, no extra package needed
 html_static_path = ["_static"]
-html_logo = "_static/hildie.jpeg"
-html_favicon = "_static/hildie.jpeg"
+html_logo = "_static/hildie.png"
+html_favicon = "_static/hildie.png"
 
 html_theme_options = {
-    "logo": "hildie.jpeg",
+    "logo": "hildie.png",
     "logo_name": True,
     "description": "Named after Hildie, because all the good names were taken!",
     "github_user": "clintonsteiner",

@@ -1,7 +1,7 @@
 Welcome to Hildie's Documentation!
 ===================================
 
-.. image:: _static/hildie.jpeg
+.. image:: _static/hildie.png
    :width: 300px
    :align: center
    :alt: Hildie the dog

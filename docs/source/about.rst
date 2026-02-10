@@ -1,7 +1,7 @@
 About Hildie
 ============
 
-.. image:: _static/hildie.jpeg
+.. image:: _static/hildie.png
    :width: 400px
    :align: center
    :alt: Hildie the dog

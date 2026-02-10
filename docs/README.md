@@ -45,16 +45,6 @@ make clean     # Clean build directory
 - `source/_templates/` - Custom templates
 - `build/` - Generated documentation (git-ignored)
 
-## Adding the Hildie Image
-
-Place the `hildie.jpeg` image in `source/_static/` directory:
-
-```bash
-cp /path/to/hildie.jpeg docs/source/_static/
-```
-
-The documentation is configured to use this image as the logo and favicon.
-
 ## Writing Documentation
 
 Documentation is written in reStructuredText (RST) format. See the [Sphinx documentation](https://www.sphinx-doc.org/) for more information.
