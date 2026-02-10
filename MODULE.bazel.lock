@@ -1742,6 +1742,1038 @@
         }
       }
     },
+    "@@rules_python~0.31.0//python/extensions:pip.bzl%pip": {
+      "os:osx,arch:aarch64": {
+        "bzlTransitiveDigest": "7BGsN9w4w2D9WpnAs7Ikstbbi47ezJlgkL+u6zYLmW4=",
+        "accumulatedFileDigests": {
+          "@@//:lock_requirements.txt": "0f0b45ca7c3eafc688ae558eb0b1ea314a616a192fa634d64420f5aee92e4198",
+          "@@//docs:lock_requirements.txt": "1c51c4a18d6e26c0266565cc4c613f2c1da5ca1c4345a436cbf92c187d2b995b"
+        },
+        "envVariables": {},
+        "generatedRepoSpecs": {
+          "pip_312_click": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_312_click",
+              "requirement": "click==8.1.7",
+              "repo": "pip_312",
+              "repo_prefix": "pip_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_docs_312_sphinx": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_docs_312_sphinx",
+              "requirement": "sphinx==7.2.6",
+              "repo": "pip_docs_312",
+              "repo_prefix": "pip_docs_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_docs_312_sphinxcontrib_devhelp": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_docs_312_sphinxcontrib_devhelp",
+              "requirement": "sphinxcontrib_devhelp==1.0.6",
+              "repo": "pip_docs_312",
+              "repo_prefix": "pip_docs_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_312_ruff": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_312_ruff",
+              "requirement": "ruff==0.4.0",
+              "repo": "pip_312",
+              "repo_prefix": "pip_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_docs_312_sphinxcontrib_qthelp": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_docs_312_sphinxcontrib_qthelp",
+              "requirement": "sphinxcontrib_qthelp==1.0.7",
+              "repo": "pip_docs_312",
+              "repo_prefix": "pip_docs_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_312_urllib3": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_312_urllib3",
+              "requirement": "urllib3==2.2.0",
+              "repo": "pip_312",
+              "repo_prefix": "pip_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_312__groups": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "group_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_312__groups",
+              "repo_prefix": "pip_312_",
+              "groups": {}
+            }
+          },
+          "pip_312_pytest": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_312_pytest",
+              "requirement": "pytest==8.0.0",
+              "repo": "pip_312",
+              "repo_prefix": "pip_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_docs_312_requests": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_docs_312_requests",
+              "requirement": "requests==2.31.0",
+              "repo": "pip_docs_312",
+              "repo_prefix": "pip_docs_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_312_charset_normalizer": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_312_charset_normalizer",
+              "requirement": "charset-normalizer==3.3.2",
+              "repo": "pip_312",
+              "repo_prefix": "pip_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_312_packaging": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_312_packaging",
+              "requirement": "packaging==26.0",
+              "repo": "pip_312",
+              "repo_prefix": "pip_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_docs_312_sphinxcontrib_jsmath": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_docs_312_sphinxcontrib_jsmath",
+              "requirement": "sphinxcontrib_jsmath==1.0.1",
+              "repo": "pip_docs_312",
+              "repo_prefix": "pip_docs_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_docs_312_idna": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_docs_312_idna",
+              "requirement": "idna==3.11",
+              "repo": "pip_docs_312",
+              "repo_prefix": "pip_docs_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_docs_312_markupsafe": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_docs_312_markupsafe",
+              "requirement": "markupsafe==2.1.5",
+              "repo": "pip_docs_312",
+              "repo_prefix": "pip_docs_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_312_certifi": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_312_certifi",
+              "requirement": "certifi==2024.2.2",
+              "repo": "pip_312",
+              "repo_prefix": "pip_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_docs_312_docutils": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_docs_312_docutils",
+              "requirement": "docutils==0.20.1",
+              "repo": "pip_docs_312",
+              "repo_prefix": "pip_docs_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip": {
+            "bzlFile": "@@rules_python~0.31.0//python/private/bzlmod:pip_repository.bzl",
+            "ruleClassName": "pip_repository",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip",
+              "repo_name": "pip",
+              "whl_map": {
+                "certifi": [
+                  "3.12"
+                ],
+                "charset_normalizer": [
+                  "3.12"
+                ],
+                "click": [
+                  "3.12"
+                ],
+                "coverage": [
+                  "3.12"
+                ],
+                "idna": [
+                  "3.12"
+                ],
+                "iniconfig": [
+                  "3.12"
+                ],
+                "packaging": [
+                  "3.12"
+                ],
+                "pluggy": [
+                  "3.12"
+                ],
+                "pytest": [
+                  "3.12"
+                ],
+                "pytest_cov": [
+                  "3.12"
+                ],
+                "requests": [
+                  "3.12"
+                ],
+                "ruff": [
+                  "3.12"
+                ],
+                "urllib3": [
+                  "3.12"
+                ]
+              },
+              "default_version": "3.12"
+            }
+          },
+          "pip_docs_312_charset_normalizer": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_docs_312_charset_normalizer",
+              "requirement": "charset-normalizer==3.3.2",
+              "repo": "pip_docs_312",
+              "repo_prefix": "pip_docs_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_312_requests": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_312_requests",
+              "requirement": "requests==2.31.0",
+              "repo": "pip_312",
+              "repo_prefix": "pip_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_docs": {
+            "bzlFile": "@@rules_python~0.31.0//python/private/bzlmod:pip_repository.bzl",
+            "ruleClassName": "pip_repository",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_docs",
+              "repo_name": "pip_docs",
+              "whl_map": {
+                "alabaster": [
+                  "3.12"
+                ],
+                "babel": [
+                  "3.12"
+                ],
+                "certifi": [
+                  "3.12"
+                ],
+                "charset_normalizer": [
+                  "3.12"
+                ],
+                "docutils": [
+                  "3.12"
+                ],
+                "idna": [
+                  "3.12"
+                ],
+                "imagesize": [
+                  "3.12"
+                ],
+                "jinja2": [
+                  "3.12"
+                ],
+                "markupsafe": [
+                  "3.12"
+                ],
+                "packaging": [
+                  "3.12"
+                ],
+                "pygments": [
+                  "3.12"
+                ],
+                "requests": [
+                  "3.12"
+                ],
+                "snowballstemmer": [
+                  "3.12"
+                ],
+                "sphinx": [
+                  "3.12"
+                ],
+                "sphinx_rtd_theme": [
+                  "3.12"
+                ],
+                "sphinxcontrib_applehelp": [
+                  "3.12"
+                ],
+                "sphinxcontrib_devhelp": [
+                  "3.12"
+                ],
+                "sphinxcontrib_htmlhelp": [
+                  "3.12"
+                ],
+                "sphinxcontrib_jsmath": [
+                  "3.12"
+                ],
+                "sphinxcontrib_qthelp": [
+                  "3.12"
+                ],
+                "sphinxcontrib_serializinghtml": [
+                  "3.12"
+                ],
+                "urllib3": [
+                  "3.12"
+                ]
+              },
+              "default_version": "3.12"
+            }
+          },
+          "pip_docs_312__groups": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "group_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_docs_312__groups",
+              "repo_prefix": "pip_docs_312_",
+              "groups": {}
+            }
+          },
+          "pip_docs_312_packaging": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_docs_312_packaging",
+              "requirement": "packaging==26.0",
+              "repo": "pip_docs_312",
+              "repo_prefix": "pip_docs_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_docs_312_urllib3": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_docs_312_urllib3",
+              "requirement": "urllib3==2.2.0",
+              "repo": "pip_docs_312",
+              "repo_prefix": "pip_docs_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_docs_312_jinja2": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_docs_312_jinja2",
+              "requirement": "jinja2==3.1.3",
+              "repo": "pip_docs_312",
+              "repo_prefix": "pip_docs_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_docs_312_certifi": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_docs_312_certifi",
+              "requirement": "certifi==2024.2.2",
+              "repo": "pip_docs_312",
+              "repo_prefix": "pip_docs_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_docs_312_pygments": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_docs_312_pygments",
+              "requirement": "pygments==2.17.2",
+              "repo": "pip_docs_312",
+              "repo_prefix": "pip_docs_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_docs_312_babel": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_docs_312_babel",
+              "requirement": "babel==2.14.0",
+              "repo": "pip_docs_312",
+              "repo_prefix": "pip_docs_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_docs_312_sphinxcontrib_applehelp": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_docs_312_sphinxcontrib_applehelp",
+              "requirement": "sphinxcontrib_applehelp==1.0.8",
+              "repo": "pip_docs_312",
+              "repo_prefix": "pip_docs_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_docs_312_sphinxcontrib_serializinghtml": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_docs_312_sphinxcontrib_serializinghtml",
+              "requirement": "sphinxcontrib_serializinghtml==1.1.10",
+              "repo": "pip_docs_312",
+              "repo_prefix": "pip_docs_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_312_iniconfig": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_312_iniconfig",
+              "requirement": "iniconfig==2.3.0",
+              "repo": "pip_312",
+              "repo_prefix": "pip_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_312_pytest_cov": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_312_pytest_cov",
+              "requirement": "pytest-cov==4.1.0",
+              "repo": "pip_312",
+              "repo_prefix": "pip_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_docs_312_snowballstemmer": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_docs_312_snowballstemmer",
+              "requirement": "snowballstemmer==2.2.0",
+              "repo": "pip_docs_312",
+              "repo_prefix": "pip_docs_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_docs_312_alabaster": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_docs_312_alabaster",
+              "requirement": "alabaster==0.7.16",
+              "repo": "pip_docs_312",
+              "repo_prefix": "pip_docs_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_docs_312_sphinxcontrib_htmlhelp": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_docs_312_sphinxcontrib_htmlhelp",
+              "requirement": "sphinxcontrib_htmlhelp==2.0.5",
+              "repo": "pip_docs_312",
+              "repo_prefix": "pip_docs_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_312_idna": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_312_idna",
+              "requirement": "idna==3.11",
+              "repo": "pip_312",
+              "repo_prefix": "pip_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_docs_312_sphinx_rtd_theme": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_docs_312_sphinx_rtd_theme",
+              "requirement": "sphinx-rtd-theme==2.0.0",
+              "repo": "pip_docs_312",
+              "repo_prefix": "pip_docs_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_312_pluggy": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_312_pluggy",
+              "requirement": "pluggy==1.6.0",
+              "repo": "pip_312",
+              "repo_prefix": "pip_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_docs_312_imagesize": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_docs_312_imagesize",
+              "requirement": "imagesize==1.4.1",
+              "repo": "pip_docs_312",
+              "repo_prefix": "pip_docs_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          },
+          "pip_312_coverage": {
+            "bzlFile": "@@rules_python~0.31.0//python/pip_install:pip_repository.bzl",
+            "ruleClassName": "whl_library",
+            "attributes": {
+              "name": "rules_python~0.31.0~pip~pip_312_coverage",
+              "requirement": "coverage==7.13.4",
+              "repo": "pip_312",
+              "repo_prefix": "pip_312_",
+              "whl_patches": {},
+              "experimental_target_platforms": [],
+              "python_interpreter": "",
+              "python_interpreter_target": "@@rules_python~0.31.0~python~python_3_12_host//:python",
+              "quiet": true,
+              "timeout": 600,
+              "isolated": true,
+              "extra_pip_args": [],
+              "download_only": false,
+              "pip_data_exclude": [],
+              "enable_implicit_namespace_pkgs": false,
+              "environment": {},
+              "envsubst": [],
+              "group_name": "",
+              "group_deps": []
+            }
+          }
+        }
+      }
+    },
     "@@rules_python~0.31.0//python/extensions:python.bzl%python": {
       "general": {
         "bzlTransitiveDigest": "f7w5NtNlJQNvUAjWLx1u84T7m7xdTzgwLM/lNW+l6JY=",
