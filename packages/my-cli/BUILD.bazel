@@ -1,6 +1,7 @@
 """BUILD file for hildie-cli package."""
 
 load("@rules_python//python:defs.bzl", "py_binary", "py_library", "py_test")
+load("@rules_python//python:packaging.bzl", "py_wheel")
 
 py_library(
     name = "hildie_cli",
@@ -35,4 +36,12 @@ py_test(
 test_suite(
     name = "all_tests",
     tests = [":test_cli"],
+)
+
+py_wheel(
+    name = "wheel",
+    distribution = "hildie_cli",
+    version = "0.1.0",
+    python_tag = "py3",
+    deps = [":hildie_cli"],
 )

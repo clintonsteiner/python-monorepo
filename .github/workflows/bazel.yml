@@ -26,7 +26,7 @@ jobs:
         run: bazel test //...
 
       - name: Build all wheels
-        run: bazel build //packages/...:wheel
+        run: bazel build $(bazel query 'kind("py_wheel", //packages/...)')
 
   publish:
     needs: test
