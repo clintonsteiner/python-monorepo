@@ -2,13 +2,8 @@
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-[tool.uv]
-workspace = [
-    ["packages/my-library"],
-    ["packages/my-app"],
-    ["packages/my-cli"],
-    { path = "packages/archive-git-forks" },
-]
+[tool.uv.workspace]
+members = ["packages/*"]
 
 [tool.uv.sources]
 my-library = { workspace = true }
@@ -18,9 +13,12 @@ archive-git-forks = { workspace = true }
 
 [dependency-groups]
 dev = [
-    "ruff>=0.4.0",
     "pytest>=7.4.0",
     "pytest-cov>=4.1.0",
+    "ruff>=0.4.0",
+    "my-app",
+    "my-cli",
+    "archive-git-forks",
 ]
 
 [tool.pytest.ini_options]
