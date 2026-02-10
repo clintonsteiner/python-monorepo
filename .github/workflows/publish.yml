@@ -4,12 +4,30 @@ on:
   push:
     tags:
       - "v*"
-      - "cosi-library-v*"
-      - "cosi-app-v*"
-      - "cosi-cli-v*"
-      - "cosi-archive-git-forks-v*"
+      - "*-v*"
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@eac588ad8def6316056a12d4907a9d4d84ff7a3b # v7.3.0
+        with:
+          version: "latest"
+
+      - name: Set up Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version-file: pyproject.toml
+
+      - name: Sync dependencies
+        run: uv sync --all-groups
+
+      - name: Run tests
+        run: uv run pytest packages -v
+
   determine-packages:
     runs-on: ubuntu-latest
     outputs:
@@ -23,22 +41,31 @@ jobs:
         id: set-matrix
         run: |
           TAG=${{ github.ref_name }}
-          MATRIX='["cosi-library", "cosi-app", "cosi-cli", "cosi-archive-git-forks"]'
 
-          if [[ $TAG == cosi-library-v* ]]; then
-            MATRIX='["cosi-library"]'
-          elif [[ $TAG == cosi-app-v* ]]; then
-            MATRIX='["cosi-app"]'
-          elif [[ $TAG == cosi-cli-v* ]]; then
-            MATRIX='["cosi-cli"]'
-          elif [[ $TAG == cosi-archive-git-forks-v* ]]; then
-            MATRIX='["cosi-archive-git-forks"]'
+          # Get all package names from pyproject.toml files
+          ALL_PACKAGES=$(find packages/*/pyproject.toml -exec grep -h '^name = ' {} \; | sed 's/name = "\(.*\)"/\1/' | jq -R . | jq -s .)
+
+          # Determine which packages to publish based on tag
+          if [[ $TAG == v* ]] && [[ $TAG != *-v* ]]; then
+            # Tag format: v0.1.0 - publish all packages
+            MATRIX=$ALL_PACKAGES
+          else
+            # Tag format: package-name-v0.1.0 - extract package name and publish only that one
+            PACKAGE_NAME=$(echo "$TAG" | sed 's/-v[0-9.]*$//')
+
+            # Verify the package exists
+            if grep -r "name = \"$PACKAGE_NAME\"" packages/*/pyproject.toml > /dev/null; then
+              MATRIX=$(echo "$PACKAGE_NAME" | jq -R . | jq -s .)
+            else
+              echo "Package $PACKAGE_NAME not found in any pyproject.toml"
+              exit 1
+            fi
           fi
 
           echo "matrix=$(echo $MATRIX | jq -c .)" >> $GITHUB_OUTPUT
 
   publish:
-    needs: determine-packages
+    needs: [test, determine-packages]
     runs-on: ubuntu-latest
     strategy:
       matrix:
