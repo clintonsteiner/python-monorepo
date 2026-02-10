@@ -1,0 +1,56 @@
+Welcome to Hildie's Documentation!
+===================================
+
+.. image:: _static/hildie.jpeg
+   :width: 300px
+   :align: center
+   :alt: Hildie the dog
+
+Hildie is a Python monorepo containing a collection of utilities and tools.
+
+.. note::
+   **Why "Hildie"?** All the good package names were taken, so this project is named
+   after Hildie, the best dog. See :doc:`about` for the full story!
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   about
+   installation
+   packages
+   api
+
+Quick Start
+-----------
+
+Install the package:
+
+.. code-block:: bash
+
+   pip install hildie
+
+Or using uv:
+
+.. code-block:: bash
+
+   uv pip install hildie
+
+Packages
+--------
+
+This monorepo contains several packages:
+
+* **archive-git-forks** - Tools for archiving Git fork repositories
+* **my-app** - Application utilities
+* **my-cli** - Command-line interface tools
+* **my-library** - Core library utilities
+
+See the :doc:`packages` page for detailed information about each package.
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
