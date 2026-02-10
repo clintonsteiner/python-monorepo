@@ -4,9 +4,10 @@ on:
   push:
     tags:
       - "v*"
-      - "my-library-v*"
-      - "my-app-v*"
-      - "my-cli-v*"
+      - "cosi-library-v*"
+      - "cosi-app-v*"
+      - "cosi-cli-v*"
+      - "cosi-archive-git-forks-v*"
 
 jobs:
   determine-packages:
@@ -22,14 +23,16 @@ jobs:
         id: set-matrix
         run: |
           TAG=${{ github.ref_name }}
-          MATRIX='["my-library", "my-app", "my-cli"]'
+          MATRIX='["cosi-library", "cosi-app", "cosi-cli", "cosi-archive-git-forks"]'
 
-          if [[ $TAG == my-library-v* ]]; then
-            MATRIX='["my-library"]'
-          elif [[ $TAG == my-app-v* ]]; then
-            MATRIX='["my-app"]'
-          elif [[ $TAG == my-cli-v* ]]; then
-            MATRIX='["my-cli"]'
+          if [[ $TAG == cosi-library-v* ]]; then
+            MATRIX='["cosi-library"]'
+          elif [[ $TAG == cosi-app-v* ]]; then
+            MATRIX='["cosi-app"]'
+          elif [[ $TAG == cosi-cli-v* ]]; then
+            MATRIX='["cosi-cli"]'
+          elif [[ $TAG == cosi-archive-git-forks-v* ]]; then
+            MATRIX='["cosi-archive-git-forks"]'
           fi
 
           echo "matrix=$(echo $MATRIX | jq -c .)" >> $GITHUB_OUTPUT
@@ -59,10 +62,24 @@ jobs:
       - name: Sync dependencies
         run: uv sync
 
+      - name: Find package directory
+        id: find-dir
+        run: |
+          PACKAGE="${{ matrix.package }}"
+          # Dynamically find the package directory by searching for the package name in pyproject.toml
+          DIR=$(grep -r "name = \"$PACKAGE\"" packages/*/pyproject.toml | head -1 | cut -d: -f1 | xargs dirname)
+
+          if [ -z "$DIR" ]; then
+            echo "Package $PACKAGE not found in any pyproject.toml"
+            exit 1
+          fi
+
+          echo "dir=$DIR" >> $GITHUB_OUTPUT
+
       - name: Build ${{ matrix.package }}
-        run: uv build packages/${{ matrix.package }}
+        run: uv build ${{ steps.find-dir.outputs.dir }}
 
       - name: Publish ${{ matrix.package }} to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          packages-dir: packages/${{ matrix.package }}/dist
+          packages-dir: ${{ steps.find-dir.outputs.dir }}/dist
