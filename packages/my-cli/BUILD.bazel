@@ -1,32 +1,12 @@
-"""BUILD file for hildie-cli package."""
+"""BUILD file for hildie-cli tests."""
 
-load("@rules_python//python:defs.bzl", "py_binary", "py_library")
 load("//tools:pytest.bzl", "pytest_tests")
-
-py_library(
-    name = "hildie_cli",
-    srcs = glob(["src/**/*.py"]),
-    imports = ["src"],
-    visibility = ["//visibility:public"],
-    deps = [
-        "//:hildie",
-        "//packages/my-library:hildie_library",
-        "@pip//click",
-    ],
-)
-
-py_binary(
-    name = "cli",
-    srcs = ["src/hildie/hildie_cli/main.py"],
-    main = "src/hildie/hildie_cli/main.py",
-    deps = [":hildie_cli"],
-)
 
 pytest_tests(
     name = "tests",
     srcs = glob(["tests/**/test_*.py"]),
     deps = [
-        ":hildie_cli",
+        "//:hildie",
         "@pip//click",
     ],
 )
