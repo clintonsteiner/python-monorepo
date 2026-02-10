@@ -1,7 +1,6 @@
 """Documentation build rules for Hildie."""
 
 load("@rules_python//python:defs.bzl", "py_binary")
-load("@rules_shell//shell:sh_binary.bzl", "sh_binary")
 
 # Sphinx builder wrapper
 py_binary(
@@ -78,11 +77,4 @@ alias(
     name = "html",
     actual = ":docs",
     visibility = ["//visibility:public"],
-)
-
-# Shell script to extract and view docs locally
-sh_binary(
-    name = "serve_docs",
-    srcs = ["serve_docs.sh"],
-    data = [":docs"],
 )
