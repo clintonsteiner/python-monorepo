@@ -14,7 +14,7 @@ genrule(
     srcs = glob([
         "source/**/*.rst",
         "source/**/*.py",
-        "source/**/*.jpeg",
+        "source/**/*.png",
         "source/_static/**/*",
     ]) + [
         "source/.nojekyll",
@@ -40,4 +40,9 @@ genrule(
     """,
     tools = [":sphinx_build"],
     visibility = ["//visibility:public"],
+)
+
+alias(
+    name = "html",
+    actual = ":docs",
 )
