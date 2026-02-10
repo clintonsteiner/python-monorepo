@@ -1,0 +1,51 @@
+"""BUILD file for hildie-archive-git-forks package."""
+
+load("@rules_python//python:defs.bzl", "py_binary", "py_library", "py_test")
+
+py_library(
+    name = "hildie_archive_git_forks",
+    srcs = glob(["src/hildie/**/*.py"]),
+    imports = ["src"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//:hildie",
+        "@pip//click",
+        "@pip//requests",
+    ],
+)
+
+py_binary(
+    name = "cli",
+    srcs = ["src/hildie/hildie_archive_git_forks/main.py"],
+    main = "src/hildie/hildie_archive_git_forks/main.py",
+    deps = [":hildie_archive_git_forks"],
+)
+
+py_test(
+    name = "test_archive_git_cli",
+    srcs = ["tests/test_archive_git_cli.py"],
+    main = "tests/test_archive_git_cli.py",
+    deps = [
+        ":hildie_archive_git_forks",
+        "@pip//click",
+        "@pip//pytest",
+    ],
+)
+
+py_test(
+    name = "test_archive_git_forks",
+    srcs = ["tests/test_archive_git_forks.py"],
+    main = "tests/test_archive_git_forks.py",
+    deps = [
+        ":hildie_archive_git_forks",
+        "@pip//pytest",
+    ],
+)
+
+test_suite(
+    name = "all_tests",
+    tests = [
+        ":test_archive_git_cli",
+        ":test_archive_git_forks",
+    ],
+)

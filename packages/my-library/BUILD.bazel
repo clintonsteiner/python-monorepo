@@ -1,0 +1,26 @@
+"""BUILD file for hildie-library package."""
+
+load("@rules_python//python:defs.bzl", "py_library", "py_test")
+
+py_library(
+    name = "hildie_library",
+    srcs = glob(["src/hildie/**/*.py"]),
+    imports = ["src"],
+    visibility = ["//visibility:public"],
+    deps = ["//:hildie"],
+)
+
+py_test(
+    name = "test_example",
+    srcs = ["tests/test_example.py"],
+    main = "tests/test_example.py",
+    deps = [
+        ":hildie_library",
+        "@pip//pytest",
+    ],
+)
+
+test_suite(
+    name = "all_tests",
+    tests = [":test_example"],
+)

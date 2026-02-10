@@ -1,0 +1,76 @@
+name: Bazel
+
+on:
+  push:
+    branches: [master, develop]
+    tags:
+      - "v*"
+      - "*-v*"
+  pull_request:
+    branches: [master, develop]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Bazel
+        uses: bazel-contrib/setup-bazel@0.8.1
+        with:
+          bazelisk-cache: true
+          disk-cache: ${{ github.workflow }}
+          repository-cache: true
+
+      - name: Run tests
+        run: bazel test //...
+
+      - name: Build all wheels
+        run: bazel build //packages/...:wheel
+
+  publish:
+    needs: test
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Bazel
+        uses: bazel-contrib/setup-bazel@0.8.1
+        with:
+          bazelisk-cache: true
+          disk-cache: ${{ github.workflow }}
+          repository-cache: true
+
+      - name: Determine packages to publish
+        id: packages
+        run: |
+          TAG=${{ github.ref_name }}
+          if [[ $TAG == v* ]] && [[ $TAG != *-v* ]]; then
+            echo "targets=//packages/my-library:wheel //packages/my-app:wheel //packages/my-cli:wheel //packages/archive-git-forks:wheel" >> $GITHUB_OUTPUT
+          else
+            PACKAGE_NAME=$(echo "$TAG" | sed 's/-v[0-9.]*$//')
+            case "$PACKAGE_NAME" in
+              hildie-library) echo "targets=//packages/my-library:wheel" >> $GITHUB_OUTPUT ;;
+              hildie-app) echo "targets=//packages/my-app:wheel" >> $GITHUB_OUTPUT ;;
+              hildie-cli) echo "targets=//packages/my-cli:wheel" >> $GITHUB_OUTPUT ;;
+              hildie-archive-git-forks) echo "targets=//packages/archive-git-forks:wheel" >> $GITHUB_OUTPUT ;;
+              *) echo "Unknown package: $PACKAGE_NAME"; exit 1 ;;
+            esac
+          fi
+
+      - name: Build wheels
+        run: bazel build ${{ steps.packages.outputs.targets }}
+
+      - name: Collect wheels
+        run: |
+          mkdir -p dist
+          find bazel-bin/packages -name "*.whl" -exec cp {} dist/ \;
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: dist/

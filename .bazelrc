@@ -1,0 +1,29 @@
+# Bazel configuration for Hildie monorepo
+
+# Use bzlmod (modern dependency management)
+common --enable_bzlmod
+
+# Python configuration
+build --python_version=PY3
+
+# Test configuration
+test --test_output=errors
+test --test_summary=short
+
+# CI configuration
+build:ci --repository_cache=~/.cache/bazel-repo
+build:ci --disk_cache=~/.cache/bazel-disk
+
+# Remote cache (optional - configure with your cache)
+# build --remote_cache=grpcs://your-cache.example.com
+
+# Performance optimizations
+build --jobs=auto
+build --experimental_remote_merkle_tree_cache
+
+# Strict mode for catching errors early
+build --incompatible_strict_action_env
+
+# Stamp builds with version info for releases
+build:release --stamp
+build:release --workspace_status_command=./tools/workspace_status.sh
