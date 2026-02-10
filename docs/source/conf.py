@@ -10,7 +10,7 @@ sys.path.insert(0, os.path.abspath("../.."))
 project = "Hildie"
 copyright = "2026, Clinton Steiner"
 author = "Clinton Steiner"
-release = "1.2rc1"
+release = "0.2.21"
 
 # -- General configuration ---------------------------------------------------
 extensions = [
