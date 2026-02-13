@@ -11,6 +11,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    matrix:
+      python_version: ["3.8", "3.11", "3.14"]
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
@@ -22,10 +24,10 @@ jobs:
           repository-cache: true
 
       - name: Run tests
-        run: bazel test //...
+        run: bazel test //... --python_version ${{ matrix.python_version }}
 
       - name: Build wheel
-        run: bazel build //:wheel
+        run: bazel build //:wheel --python_version ${{matrix.python_version}}
 
   publish:
     needs: test
