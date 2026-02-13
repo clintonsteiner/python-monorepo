@@ -31,6 +31,10 @@ dependencies = [
 ]
 dynamic = ["version"]
 
+[build-system]
+requires = ["setuptools>=42", "setuptools-scm>=6.2", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project.scripts]
 check-unittest-super = "hildie.check_unittest_super:main"
 
