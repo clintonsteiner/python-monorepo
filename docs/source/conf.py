@@ -2,20 +2,14 @@
 
 import os
 import sys
-import tomllib
-from pathlib import Path
 
 # Add the project root to the path so autodoc can find the modules
 sys.path.insert(0, os.path.abspath("../.."))
-pyproject_file = Path(__file__).parent.parent.parent / "pyproject.toml"
 
-# -- Project information -----------------------------------------------------
-with open(pyproject_file, "rb") as f:
-    project_metadata = tomllib.load(f)
-
-# -- Project information -----------------------------------------------------
-project = project_metadata["project"]["name"]
-author = ", ".join([a["name"] for a in project_metadata["project"]["authors"]])
+project = "Hildie"
+copyright = "2026, Clinton Steiner"
+author = "Clinton Steiner"
+release = "0.2.21"
 
 # -- General configuration ---------------------------------------------------
 extensions = [
