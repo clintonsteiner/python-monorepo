@@ -4,11 +4,6 @@ on:
   push:
     branches:
       - master
-    paths:
-      - 'docs/**'
-      - 'src/hildie/**'
-      - 'MODULE.bazel'
-      - '.github/workflows/docs.yml'
   workflow_dispatch:
 
 permissions:
