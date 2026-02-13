@@ -11,8 +11,9 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    matrix:
-      python_version: ["3.8", "3.11", "3.14"]
+    strategy:
+      matrix:
+        python_version: ["3.8", "3.11", "3.14"]
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
