@@ -23,3 +23,20 @@ updates:
       interval: 'daily'
     commit-message:
       prefix: "pip"
+
+  - package-ecosystem: "npm"
+    directory: "/" # Location of your package.json and package-lock.json
+    schedule:
+      interval: "daily"
+
+  # Go modules configuration
+  - package-ecosystem: "gomod"
+    directory: "/" # Location of your go.mod file
+    schedule:
+      interval: "daily"
+
+  # Rust (Cargo) configuration
+  - package-ecosystem: "cargo"
+    directory: "/" # Location of your Cargo.toml and Cargo.lock files
+    schedule:
+      interval: "daily"
