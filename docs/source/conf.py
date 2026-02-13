@@ -43,13 +43,6 @@ html_theme_options = {
     "titles_only": False,
 }
 
-html_context = {
-    "display_github": True,  # Integrate GitHub
-    "github_user": "clintonsteiner",  # Username
-    "github_repo": "hildies-python-monorepo",  # Repo name
-    "github_version": "master",  # Version
-}
-
 # -- Intersphinx configuration -----------------------------------------------
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
