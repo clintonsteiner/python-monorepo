@@ -7,8 +7,10 @@ py_binary(
     srcs = ["sphinx_build.py"],
     main = "sphinx_build.py",
     deps = [
+        "@pip_docs//roman",
         "@pip_docs//sphinx",
         "@pip_docs//sphinx_rtd_theme",
+        "@pip_docs//sphinx_toolbox",
     ],
 )
 

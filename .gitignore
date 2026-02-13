@@ -1,6 +1,7 @@
 # Bazel
 bazel-*
 .bazelrc.user
+CLAUDE.md
 
 # Python
 __pycache__/

@@ -36,10 +36,10 @@ dev = [
     "ruff>=0.15.0",
 ]
 docs = [
-    "sphinx>=9.0.4",
+    "sphinx<=8.2.3",
     "sphinx-rtd-theme>=3.0.0",
-    "sphinxcontrib-jquery",
     "roman",
+    "sphinx-toolbox",
 ]
 
 [project.urls]

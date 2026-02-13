@@ -11,6 +11,9 @@ project = "Hildie"
 copyright = "2026, Clinton Steiner"
 author = "Clinton Steiner"
 release = "0.2.21"
+github_username = "cllintonsteiner"
+github_repository = "hildies-python-monorepo"
+pypi = "hildie"
 
 # -- General configuration ---------------------------------------------------
 extensions = [
@@ -18,6 +21,7 @@ extensions = [
     "sphinx.ext.napoleon",
     "sphinx.ext.viewcode",
     "sphinx.ext.intersphinx",
+    "sphinx_toolbox.github",
 ]
 
 templates_path = ["_templates"]
