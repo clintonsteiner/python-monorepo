@@ -123,7 +123,7 @@ jobs:
         run: |
           bazel build //source/hildie/...
           bazel build //:wheel
-          bazel build //source/hildie/bindings/python:wheel
+          #bazel build //source/hildie/bindings/python:wheel
 
       - name: Collect artifacts
         run: |
